@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 4</title>
+    <style>
+    body{
+        margin: 2%;
+        border: 1px solid black;
+        background-color: #b3b3b3;
+    }
+    #image{
+        line-height:325px;
+        width: 388px;
+        height: 325px;
+        border:5px solid black;
+        margin:0 auto;
+        background-repeat: no-repeat;
+        color:#FFFFFF;
+        text-align: center;
+        background-color: #8e68ff;
+        background-image: url('');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin-bottom:25px;
+        font-size:150%;
+    }
+    .preview{
+        width:10%;
+        margin-left:17%;
+        border: 10px solid black;
+    }
+    img{
+        width:auto;
+        height:100%;
+    }
+    h1{
+        text-align: center;
+    }
+    </style>
+
+    <script>
+    // I used Two functions here.  Starter idea at: 
+    // https://codepen.io/ColleenEMc/pen/XmZzWw
+    var originaltxt = "stuff";
+    function upDate(previewPic){
+
+        let previewbox = document.querySelector("#image");
+        originaltxt = previewbox.textContent;
+        
+        let previewtext = previewPic.alt;
+        let previewimg = previewPic.src;
+
+        previewbox.textContent = previewtext;
+        previewbox.style.backgroundImage = 'url('+previewimg+')';
+    }
+    function unDo() {
+        let previewbox = document.querySelector("#image");
+        previewbox.textContent = originaltxt;
+        previewbox.style.backgroundImage ='initial';
+
+    }
+    </script>
+</head>
+
+<body>
+    <h1>Challenge 4</h1>
+        <div id = "image">
+            Hover or tab over/into an image below.
+        </div>
+
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview" 
+            alt = "Styling with a Bandana" 
+            src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon.jpg"
+            onmouseover = "upDate(this)" onmouseleave = "unDo()" onfocus="upDate(this)" onblur="unDo()" tabindex='0';>
+
+
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->  
+        <img class = "preview" 
+            alt = "With My Boy" 
+            src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon2.JPG" 
+            onmouseover = "upDate(this)" onmouseleave = "unDo(this)">
+    
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview" tabindex = "1" 
+            src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon3.jpg" 
+            alt = "Young Puppy"
+            onmouseover = "upDate(this)" onmouseleave = "unDo(this)">
+
+        <img class = "preview" tabindex = "1" 
+            src = "https://images.pexels.com/photos/930683/pexels-photo-930683.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" 
+            alt = "Ocean"
+            onmouseover = "upDate(this)" onmouseleave = "unDo(this)">
+        
+        <img class = "preview" tabindex = "1" 
+            src = "https://images.pexels.com/photos/1098365/pexels-photo-1098365.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" 
+            alt = "Dive"
+            onmouseover = "upDate(this)" onmouseleave = "unDo(this)">
+        
+        <img class = "preview" tabindex = "1" 
+            src = "https://images.pexels.com/photos/1054391/pexels-photo-1054391.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" 
+            alt = "Wave"
+            onmouseover = "upDate(this)" onmouseleave = "unDo(this)">
+</body>
+</html>
+    

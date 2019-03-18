@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <title>Challenge 3</title>
+    <style>
+
+    .errorMsg { 
+        /*font: Use a cool Google font*/
+      font-family: 'Roboto Mono', monospace;
+      color:red;
+      display:none;
+      line-height: 40px;
+       } 
+    </style>
+    
+    <script>
+    function checkForm(){
+      // Write a function that displays the appropriate error message(s) if a field is left blank.  Make sure the form action is not performed if either field is blank.
+      var fullnamefield = document.getElementById("name");
+      var streetnamefield = document.getElementById("addr");
+      var name_error = document.getElementById("nameError");
+      var addr_error = document.getElementById("addressError");
+      // var is_valid = (fullnamefield.value === true)
+      var checked = true;
+      if (fullnamefield.value.length == 0 ) {
+        name_error.style.display = "block"
+        checked = false;
+      } else {
+        name_error.style.display = "none"
+      }
+      
+      if (streetnamefield.value.length == 0 ) {
+        addr_error.style.display = "block"
+        checked = false;
+      } else {
+        addr_error.style.display = "none"
+      }
+      return checked;
+    }  
+    </script>
+</head>
+<body>
+    <h1>Challenge Three</h1>
+  <form action="challenge4.html" onsubmit="return checkForm();">
+        <fieldset>
+        <legend>Personal details</legend>
+          <label for="name">Full name: </label>
+            <input type="text" name="fullname" id="name"><br/>
+            <p class="errorMsg" id="nameError">Please enter your name above!</p>
+
+          <label for ="streetaddr"></label>
+            Street Address:
+            <input type="text" name="addr" id="addr"><br>
+            <p class="errorMsg" id="addressError">Please enter your street address!</p>
+        </fieldset>
+        <input type="submit" value="Submit it!"> 
+    </form>
+</body>
+</html>
